@@ -1,0 +1,32 @@
+public class TestdataSunlifeController {
+
+
+    @AuraEnabled
+    public static List < account > fetchAccts() {
+        
+        List < Account > returnList = new List < Account > ();
+        List < Account > lstOfAccount = [select id, Name, OwnerId,Phone, website,AnnualRevenue from account where Industry = 'Financial Services' LIMIT 5];
+        
+        for (Account acc: lstOfAccount) {
+            returnList.add(acc);
+        }
+        return returnList;
+    }
+    
+ @AuraEnabled    
+    public static boolean updateAccts( List < Account > updatedAccountList ) {    
+            
+        try {  
+          
+            update updatedAccountList;  
+            return true;  
+              
+        } catch(Exception e) {  
+          
+            return false;  
+              
+        }  
+            
+    }    
+        
+}
