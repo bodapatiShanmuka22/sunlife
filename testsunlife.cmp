@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global"  controller="TestSunlifelistViewController">
+    <aura:handler name="init" value="this" action="{!c.doInit}"/>
+    <aura:attribute name="listViewResult" type="string[]"/>
+    <aura:attribute name="objectInfo" type="string" default="Account"/>
+    <aura:attribute name="currentListViewName" type="string" default="Financial_Services_Account_Listing" />
+    <aura:attribute name="bShowListView" type="boolean" default="false"/>
+ <lightning:listView objectApiName="{!v.objectInfo}"
+                            listName="{!v.currentListViewName}"
+                            rows="5"
+                            showSearchBar="true"
+                            showActionBar="false"
+                            enableInlineEdit="true"
+                            showRowLevelActions="false"
+                            />
+
+</aura:component>
+ 
+ 
