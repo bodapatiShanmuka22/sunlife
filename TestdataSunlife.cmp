@@ -1,0 +1,15 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" controller="TestdataSunlifeController"> 
+        
+    <aura:attribute type="object" name="acctList"/>    
+    <aura:attribute name="mycolumns" type="List"/>    
+        
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}"/>    
+        
+    <lightning:datatable aura:id="acctTable"  
+                         data="{! v.acctList }"     
+                         columns="{! v.mycolumns }"     
+                         keyField="Id"    
+                         hideCheckboxColumn="true"  
+                         onsave="{! c.onSave }"/>    
+        
+</aura:component>  
